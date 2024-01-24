@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./components/Nav";
-import "./App.css"
+import Hero from "./components/Hero";
+import "./App.css";
 
 export default function App() {
   return (
     <>
-   <Nav />
-    </>
-  )
-}
+    <div className="">
+      <Nav />
+      <Hero />
+      </div>
+        </>
+        )}
