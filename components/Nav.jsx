@@ -1,9 +1,9 @@
 import React, { useState,useEffect } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Nav = () => {
   const [navbar,setNavBar]=useState(false);
   const changeBackground=()=>{
-    if(window.scrollY >=120){
+    if(window.scrollY >=100){
       setNavBar(true);
     }else{
       setNavBar(false);
@@ -15,7 +15,9 @@ const Nav = () => {
   }, []);
   return (
     <header>
-        <nav className={`bg-${navbar ? 'black' : 'white'} text-${navbar ? 'black' : 'white'} border-gray-200 dark:bg-gray-900`}>
+        <nav className={`
+        border-transparent ${navbar ? 'bg-black':'bg-gradient-to-b from-zinc-900 to-gray-800'}
+        border-gray-200 dark:bg-gray-900`}>
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a
       href=""
@@ -136,15 +138,15 @@ const Nav = () => {
         <li>
           <a
             href="#"
-            className={`${navbar ? 'decoration-white' : 'text-black'} block py-2 px-3  rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500`}
-          >
+            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'>
+
             Home
           </a>
         </li>
         <li>
           <a
             href="#"
-            className={`${navbar ? 'decoration-white' : 'text-black'} block py-2 px-3  rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500`}
+            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             TV Shows
           </a>
@@ -152,7 +154,7 @@ const Nav = () => {
         <li>
           <a
             href="#"
-            className={`${navbar ? 'decoration-white' : 'text-black'} block py-2 px-3  rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500`}
+            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             Movies
           </a>
@@ -160,7 +162,7 @@ const Nav = () => {
         <li>
           <a
             href="#"
-            className={`${navbar ? 'decoration-white' : 'text-black'} block py-2 px-3  rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500`}
+            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             Latest
           </a>
@@ -168,7 +170,7 @@ const Nav = () => {
         <li>
           <a
             href="#"
-            className={`${navbar ? 'decoration-white' : 'text-black'} block py-2 px-3  rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500`}
+            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             My List
           </a>
