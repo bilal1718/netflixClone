@@ -12,3 +12,22 @@ nav{
   position: sticky;
   @apply fixed top-0 w-full z-50;
 }
+.right-arrow, .left-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: #fff;
+  z-index: 20;
+  cursor: pointer;
+  user-select: none;
+}
+
+.right-arrow {
+  right: 22px;
+  transform: translateY(-50%);
+}
+
+.left-arrow {
+  left: 22px;
+  transform: translateY(-50%);
+}
