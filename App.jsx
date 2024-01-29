@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Movies from "./components/movies/Movies";
+import Home from "./components/Home";
+import MyList from "./components/MyList";
 
 export default function App() {
   return (
-    <>
-    <div className="">
-      <Nav />
-      <Hero />
-      <Movies />
-      </div>
-        </>
+    <BrowserRouter>
+    <Routes>
+  <Route index element={<Home />} />
+  <Route path="myList" element={<MyList />}/>
+      </Routes>
+        </BrowserRouter>
         )}
