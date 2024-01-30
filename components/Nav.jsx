@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState,useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const Nav = () => {
   const [navbar,setNavBar]=useState(false);
   const changeBackground=()=>{
@@ -136,12 +136,14 @@ const Nav = () => {
       </div>
       <ul className={`flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg ${navbar ? 'text-white' : 'text-black'} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700`}>
         <li>
+          <Link to="/">
           <a
             href="#"
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'>
 
             Home
           </a>
+          </Link>
         </li>
         <li>
           <a
@@ -168,12 +170,14 @@ const Nav = () => {
           </a>
         </li>
         <li>
+          <Link to="myList">
           <a
             href="#"
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             My List
           </a>
+          </Link>
         </li>
       </ul>
     </div>

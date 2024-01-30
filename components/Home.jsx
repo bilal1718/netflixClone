@@ -5,12 +5,12 @@ import "../App.css";
 import Movies from "./Movies";
 import Footer from "./footer";
 
-const Home = () => {
+const Home = ({AddtoList}) => {
   return (
     <div className="">
       <Nav />
       <Hero />
-      <Movies />
+      <Movies AddtoList={AddtoList} />
       <Footer />
       </div>
   )

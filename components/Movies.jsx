@@ -1,22 +1,22 @@
-import React from 'react'
-import Popular from './Popular'
-import Top_Rated from './Top_Rated'
-import TV_Shows from './TV_Shows'
-import Top_Rated_Tv from './Top_Rated_Tv_Shows'
-import Comedy_Movies from './comedy_movie'
-import Romantic_Movie from './romantic_movie'
-import Horror_Movie from './horror_movies'
+import React, { useState } from 'react'
+import Popular from './movies/Popular'
+import Top_Rated from './movies/Top_Rated'
+import TV_Shows from './movies/TV_Shows'
+import Top_Rated_Tv from './movies/Top_Rated_Tv_Shows'
+import Comedy_Movies from './movies/comedy_movie'
+import Romantic_Movie from './movies/romantic_movie'
+import Horror_Movie from './movies/horror_movies'
 
-const Movies = () => {
+const Movies = ({AddtoList}) => {
   return (
     <div>
-        <Popular />
-        <Top_Rated />
-        <Top_Rated_Tv />
-        <TV_Shows />
-        <Comedy_Movies />
-        <Romantic_Movie />
-        <Horror_Movie />
+        <Popular AddtoList={AddtoList} />
+        <Top_Rated AddtoList={AddtoList} />
+        <Top_Rated_Tv AddtoList={AddtoList} />
+        <TV_Shows AddtoList={AddtoList} />
+        <Comedy_Movies AddtoList={AddtoList} />
+        <Romantic_Movie AddtoList={AddtoList} />
+        <Horror_Movie AddtoList={AddtoList} />
     </div>
   )
 }
