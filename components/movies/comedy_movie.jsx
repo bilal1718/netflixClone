@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
-const Comedy_Movies = () => {
+const Comedy_Movies = ({AddtoList}) => {
     const [movies, setMovies] = useState([]);
     const [current, setCurrent] = useState(0);
     const [selectedMovie, setSelectedMovie] = useState(null);
@@ -100,7 +100,7 @@ const Comedy_Movies = () => {
                         <p className="text-gray-600 mb-2">{selectedMovie.overview}</p>
                         <div className="flex justify-center space-x-4">
                             <button className="bg-blue-500 text-white px-4 py-2 mb-4 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Play</button>
-                            <button className="bg-gray-700 text-white px-4 py-2 mb-4 rounded-full hover:bg-gray-800 focus:outline-none focus:ring focus:border-gray-500">Add to List</button>
+                            <button  onClick={() => AddtoList(selectedMovie)} className="bg-gray-700 text-white px-4 py-2 mb-4 rounded-full hover:bg-gray-800 focus:outline-none focus:ring focus:border-gray-500">Add to List</button>
                         </div>
                     </div>
                 </div>
