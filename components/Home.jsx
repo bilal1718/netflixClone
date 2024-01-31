@@ -7,7 +7,7 @@ import Footer from "./footer";
 
 const Home = ({AddtoList}) => {
   return (
-    <div className="">
+    <div>
       <Nav />
       <Hero />
       <Movies AddtoList={AddtoList} />

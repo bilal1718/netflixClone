@@ -14,21 +14,21 @@ const Hero = () => {
       trip that would test the limits of their <br /> friendship.
        As they learn to try new things, they find...
       </p>
-      <button type="button" class="text-gray-900 bg-white border-transparent border-gray-300
+      <button type="button" className="text-gray-900 bg-white border-transparent border-gray-300
        focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200
        font-medium rounded-lg text-md px-8 py-4 me-2 mb-2 dark:bg-gray-800
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700
         dark:hover:border-gray-600 dark:focus:ring-gray-700">Watch now
        </button>
        <Link to="myList">
-       <button type="button" class="text-white-900 bg-slate-400 border-transparent border-gray-300
+       <button type="button" className="text-white-900 bg-slate-400 border-transparent border-gray-300
        focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200
        font-medium rounded-lg text-md px-8 py-4 me-2 mb-2 dark:bg-gray-800
         dark:text-white dark:border-gray-600 dark:hover:bg-gray-700
         dark:hover:border-gray-600 dark:focus:ring-gray-700">My List</button></Link>
     </div>
     <div className="lg:mt-3 lg:col-span-5 lg:flex">
-      <img className='' src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png'  alt="mockup"
+      <img  src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png'  alt="mockup"
       />
     </div>
   </div>
