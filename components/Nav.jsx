@@ -146,31 +146,27 @@ const Nav = () => {
           </Link>
         </li>
         <li>
+          <Link to='/tvShows'>
           <a
             href="#"
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             TV Shows
           </a>
+          </Link>
         </li>
         <li>
+          <Link to="/allMovies">
           <a
             href="#"
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             Movies
           </a>
+          </Link>
         </li>
         <li>
-          <a
-            href="#"
-            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
-          >
-            Latest
-          </a>
-        </li>
-        <li>
-          <Link to="myList">
+          <Link to="/myList">
           <a
             href="#"
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
