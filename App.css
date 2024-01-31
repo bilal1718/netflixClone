@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
   font-family: 'Bebas Neue', sans-serif;
-  background: black; /* Set the background color to black */
-}
+  background: black; /* Set the background color to black */ 
 
 header {
   position: relative;
