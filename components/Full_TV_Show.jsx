@@ -4,6 +4,7 @@ import Nav from './Nav';
 const Full_TV_Show = ({AddtoList}) => {
     const [movies, setMovies] = useState([]);
     const [isLoading,setIsLoading]=useState(false);
+    const [filteredData,setFilteredData]=useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [disableScroll, setDisableScroll] = useState(false);
     const [pageNumber,setPageNumber]=useState(1);
@@ -30,6 +31,7 @@ const Full_TV_Show = ({AddtoList}) => {
         try {
           const response = await axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=58eec0999b7db5c6b801fecec14d2b51&page=${pageNumber}`);
           setMovies((prevMovies) => [...prevMovies, ...response.data.results]);
+          setFilteredData((prevMovies) => [...prevMovies, ...response.data.results])
         } catch (error) {
           console.error(error);
         } finally {
@@ -54,14 +56,23 @@ const Full_TV_Show = ({AddtoList}) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
       }, [isLoading]);
+      const FilterByMovieName = (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        setFilteredData(
+            movies.filter((item) => {
+            const movieTitle =item.title || item.name;
+            return movieTitle.toLowerCase().includes(searchTerm);
+          })
+        );
+      };
   return (
     <>
-    <Nav />
+    <Nav FilterByMovieName={FilterByMovieName} />
     <h1 className='bg-zinc-900 mt-16 text-white font-extrabold text-4xl p-4'>TV Shows</h1>
     <div className={`relative flex bg-zinc-900 ${disableScroll ? 'overflow-hidden' : ''}`}>
             <section className="mx-8 p-8 flex flex-wrap overflow-x-auto">
-                {movies.map((movie) => (
-                    <div key={movie.id} className="m-4 hover-effect">
+                {filteredData.map((movie,i) => (
+                    <div key={i} className="m-4 hover-effect">
                         <a onClick={() => handleDetail(movie.id)}>
                             {movie.poster_path==null ? "" : <img
                                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
