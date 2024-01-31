@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
-const Nav = () => {
+const Nav = ({FilterByMovieName}) => {
   const [navbar,setNavBar]=useState(false);
   const changeBackground=()=>{
     if(window.scrollY >=100){
@@ -20,7 +20,6 @@ const Nav = () => {
         border-gray-200 dark:bg-gray-900`}>
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a
-      href=""
       className="flex items-center space-x-3 rtl:space-x-reverse"
     >
       <img
@@ -75,6 +74,7 @@ const Nav = () => {
         </div>
         <input
           type="text"
+          onChange={FilterByMovieName}
           id="search-navbar"
           className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Search..."
@@ -136,43 +136,27 @@ const Nav = () => {
       </div>
       <ul className={`flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg ${navbar ? 'text-white' : 'text-black'} md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700`}>
         <li>
-          <Link to="/">
-          <a
-            href="#"
-            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'>
-
+          <Link to="/" className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'>
             Home
-          </a>
           </Link>
         </li>
         <li>
-          <Link to='/tvShows'>
-          <a
-            href="#"
+          <Link to='/tvShows'
             className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             TV Shows
-          </a>
           </Link>
         </li>
         <li>
-          <Link to="/allMovies">
-          <a
-            href="#"
-            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
+          <Link to="/allMovies" className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             Movies
-          </a>
           </Link>
         </li>
         <li>
-          <Link to="/myList">
-          <a
-            href="#"
-            className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
+          <Link to="/myList" className='text-white block py-2 px-3 rounded md:bg-transparent md:text-black-700 md:p-0 md:dark:text-black-500'
           >
             My List
-          </a>
           </Link>
         </li>
       </ul>
