@@ -67,7 +67,8 @@ const Comedy_Movies = ({AddtoList}) => {
         <div className={`relative flex bg-zinc-900 ${disableScroll ? 'overflow-hidden' : ''}`}>
                 <section className="mx-8 p-8 flex flex-row overflow-x-auto">
                     {movies.slice(current, current + itemsPerPage).map((movie) => (
-                        <div key={movie.id} className="m-4 hover-effect">
+                         <div key={movie.id} className="m-4 hover-effect tool" >
+                         <span className='tooltiptext'>{movie.title}</span>
                             <a onClick={() => handleDetail(movie.id)}>
                                 <img
                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
