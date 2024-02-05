@@ -9,6 +9,23 @@ const Full_Movies = ({AddtoList}) => {
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [disableScroll, setDisableScroll] = useState(false);
     const [pageNumber,setPageNumber]=useState(1);
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        setShowBackToTop(true);
+      } else {
+        setShowBackToTop(false);
+      }
+    }
+    window.addEventListener('scroll', scrollFunction);
+  }, []);
+
+  function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
     useEffect(() => {
         if (selectedMovie) {
             setDisableScroll(true);
@@ -69,6 +86,11 @@ const Full_Movies = ({AddtoList}) => {
   return (
     <>
     <Nav FilterByMovieName={FilterByMovieName} />
+    {showBackToTop && (
+        <button className='back-to-top' onClick={backToTop}>
+          Back to top
+        </button>
+      )}
     <h1 className='bg-zinc-900 mt-16 text-white font-extrabold text-4xl p-4'>Movies</h1>
     <div className={`relative flex bg-zinc-900 ${disableScroll ? 'overflow-hidden' : ''}`}>
             <section className="mx-8 p-8 flex flex-wrap overflow-x-auto">
