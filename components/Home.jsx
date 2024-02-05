@@ -7,7 +7,7 @@ import Footer from "./footer";
 
 const Home = ({AddtoList}) => {
   return (
-    <div>
+    <div className='scroll-container'>
       <Nav />
       <Hero />
       <Movies AddtoList={AddtoList} />
