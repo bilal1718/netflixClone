@@ -144,3 +144,24 @@ body {
   padding: 15px;
   border-radius: 4px;
  }
+ .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  width: 120px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 5px;
+  position: absolute;
+  z-index: 2;
+  bottom: 80%;
+  left: 50%;
+  transform: translateX(-30%);
+  transition: opacity 0.5s, transform 0.3s;
+}
+
+.tool:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
