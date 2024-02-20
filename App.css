@@ -165,3 +165,11 @@ body {
   visibility: visible;
   opacity: 1;
 }
+.loading-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 20px;
+  color: #333;
+}
