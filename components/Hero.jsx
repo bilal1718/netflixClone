@@ -5,8 +5,8 @@ const Hero = () => {
     <section className="border-transparent relative bg-gradient-to-b from-gray-800 to-zinc-900 dark:bg-gray-900">
   <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
     <div className="mr-auto place-self-center lg:col-span-6">
-      <h1 className="text-white max-w-2xl mb-4 text-4xl font-bold leading-none md:text-5xl xl:text-6xl dark:text-white">
-      Green Eggs and Ham
+      <h1 className="text-white mt-6 max-w-2xl mb-4 text-4xl font-bold leading-none md:text-5xl xl:text-6xl dark:text-white">
+      Out of the mountain of despair, a stone of hope.
       </h1>
       <p className="max-w-2xl mb-6 text-white lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
       Guy-Am-I, an inventor, and his friend Sam-I-Am go <br/>
