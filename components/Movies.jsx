@@ -1,24 +1,28 @@
-import React, { useState } from 'react'
-import Popular from './movies/Popular'
-import Top_Rated from './movies/Top_Rated'
-import TV_Shows from './movies/TV_Shows'
-import Top_Rated_Tv from './movies/Top_Rated_Tv_Shows'
-import Comedy_Movies from './movies/comedy_movie'
-import Romantic_Movie from './movies/romantic_movie'
-import Horror_Movie from './movies/horror_movies'
+import React, { lazy, Suspense } from 'react';
+import '../App.css';
 
-const Movies = ({AddtoList}) => {
+const LazyPopular = lazy(() => import('./movies/Popular'));
+const LazyTopRated = lazy(() => import('./movies/Top_Rated'));
+const LazyTopRatedTv = lazy(() => import('./movies/Top_Rated_Tv_Shows'));
+const LazyTVShows = lazy(() => import('./movies/TV_Shows'));
+const LazyComedyMovies = lazy(() => import('./movies/comedy_movie'));
+const LazyRomanticMovie = lazy(() => import('./movies/romantic_movie'));
+const LazyHorrorMovie = lazy(() => import('./movies/horror_movies'));
+
+const Movies = ({ AddtoList }) => {
   return (
-    <div>
-        <Popular AddtoList={AddtoList} />
-        <Top_Rated AddtoList={AddtoList} />
-        <Top_Rated_Tv AddtoList={AddtoList} />
-        <TV_Shows AddtoList={AddtoList} />
-        <Comedy_Movies AddtoList={AddtoList} />
-        <Romantic_Movie AddtoList={AddtoList} />
-        <Horror_Movie AddtoList={AddtoList} />
-    </div>
-  )
-}
+    <Suspense fallback={<div className="loading-message">Loading...</div>}>
+      <div>
+        <LazyPopular AddtoList={AddtoList} />
+        <LazyTopRated AddtoList={AddtoList} />
+        <LazyTopRatedTv AddtoList={AddtoList} />
+        <LazyTVShows AddtoList={AddtoList} />
+        <LazyComedyMovies AddtoList={AddtoList} />
+        <LazyRomanticMovie AddtoList={AddtoList} />
+        <LazyHorrorMovie AddtoList={AddtoList} />
+      </div>
+    </Suspense>
+  );
+};
 
-export default Movies
+export default Movies;
